@@ -46,35 +46,6 @@ module.exports = {
   },
 
   /**
-   * Creates a file at the given path with the given contents
-   *
-   * @param {String} path The path which to create the file
-   * @param {String} data The contents which to write to the file
-   */
-  createFile: function(path, data) {
-    var rcPath = path.join(directory, config.scribe.rcfile);
-    fs.openSync(rcPath, 'w');
-  },
-
-  /**
-   * Discovers all non-dotfiles in the given directory
-   *
-   * `directory` needs to be expanded (e.g. '/home/USER/Downloads). readdirSync
-   * does not like unexpanded paths (e.g. '~/Downloads')
-   *
-   * TODO make a recursive search through fs
-   *
-   * @param {String} directory
-   * @return {Array} files in `directory`
-   */
-  getFiles: function(directory) {
-    var files = fs.readdirSync(directory);
-    return _.filter(files, function(file) {
-      return file.indexOf('.') !== 0;
-    });
-  },
-
-  /**
    * Reads the contents of a file at the given path
    *
    * @param {String} path
