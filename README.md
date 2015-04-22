@@ -10,7 +10,7 @@ All notes in this repo are encrypted.
 ### setup
 - create a notes directory
 - add notes
-- when you want to backup, run:
+- when you want to encrypt your notes, run:
   - `$ node index.js -e`
   - this will encrypt all notes and throw them into an encrypted directory
 - push repo to prefered git server
